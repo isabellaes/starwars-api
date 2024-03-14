@@ -3,8 +3,21 @@ import Person from "../person/Person";
 
 type SWPerson = {
   name: string;
+  height: string;
+  mass: string;
   hair_color: string;
+  skin_color: string;
   eye_color: string;
+  birth_year: string;
+  gender: string;
+  homeworld: string;
+  films: string[];
+  species: any[];
+  vehicles: string[];
+  starships: string[];
+  created: string;
+  edited: string;
+  url: string;
 };
 
 const Container = () => {
@@ -31,12 +44,7 @@ const Container = () => {
   return (
     <div className="container">
       {persons?.map((person) => (
-        <Person
-          key={person.name}
-          name={person.name}
-          hair_color={person.hair_color}
-          eye_color={person.eye_color}
-        />
+        <Person key={person.name} url={person.url} />
       ))}
     </div>
   );
